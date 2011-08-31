@@ -58,6 +58,7 @@ FILES = \
 
 REFERENCES = \
 	-r:$(MONOBIN)/mscorlib.dll \
+	-r:$(MONOBIN)/Mono.Cairo.dll \
 	-r:System.dll -r:System.Xml.dll \
 	-r:$(MDBIN)/MonoDevelop.Core.dll \
 	-r:$(MDBIN)/MonoDevelop.Ide.dll \

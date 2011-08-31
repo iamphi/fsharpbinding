@@ -83,37 +83,39 @@ searchpaths "MonoDevelop" bin/MonoDevelop.Core.dll PATHS[@]
 MDDIR=$RESULT
 echo "Successfully found MonoDevelop root directory." $MDDIR
 
-PATHS=( /usr/lib/fsharp /usr/local/lib/fsharp /opt/mono/lib/mono/2.0 )
+MONO_VERSION=2.10.5
+MONO_FRAMEWORK_VERSION=4.0
+PATHS=( /usr/lib/fsharp /usr/local/lib/fsharp /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/$MONO_FRAMEWORK_VERSION /opt/mono/lib/mono/2.0 )
 searchpaths "F#" FSharp.Core.dll PATHS[@]
 FSDIR=$RESULT
 echo "Successfully found F# root directory." $FSDIR
 
-PATHS=( /usr/lib/mono/2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/2.0 /opt/mono/lib/mono/2.0 )
+PATHS=( /usr/lib/mono/2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/$MONO_FRAMEWORK_VERSION /opt/mono/lib/mono/2.0 )
 searchpaths "Mono" mscorlib.dll PATHS[@]
 MONODIR=$RESULT
 echo "Successfully found Mono root directory." $MONODIR
 
-PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/gtk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
+PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/gtk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
 searchpaths "Gtk#" gtk-sharp.dll PATHS[@]
 GTKDIR=$RESULT
 echo "Successfully found Gtk# root directory." $GTKDIR
 
-PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/glib-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
+PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/glib-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
 searchpaths "Glib" glib-sharp.dll PATHS[@]
 GLIBDIR=$RESULT
 echo "Successfully found Glib# root directory." $GLIBDIR
 
-PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/atk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
+PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/atk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
 searchpaths "Atk#" atk-sharp.dll PATHS[@]
 ATKDIR=$RESULT
 echo "Successfully found Atk# root directory." $ATKDIR
 
-PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/gdk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
+PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/gdk-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
 searchpaths "Gdk#" gdk-sharp.dll PATHS[@]
 GDKDIR=$RESULT
 echo "Successfully found Gdk# root directory." $GDKDIR
 
-PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/pango-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/2.8/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
+PATHS=( /usr/lib/mono/gtk-sharp-2.0 /usr/lib/cli/pango-sharp-2.0 /Library/Frameworks/Mono.framework/Versions/$MONO_VERSION/lib/mono/gtk-sharp-2.0 /opt/mono/lib/mono/gtk-sharp-2.0 )
 searchpaths "Pango#" pango-sharp.dll PATHS[@]
 PANGODIR=$RESULT
 echo "Successfully found Pango root directory." $PANGODIR

@@ -384,7 +384,7 @@ module Common =
         // If we can find 'fsc.exe' then that is good no matter where we're running
         Path.Combine(dir, "fsc.exe")
         // Fallback case - depends on the platform
-    | _ -> if Environment.runningOnMono then "fsharpc" else "fsc.exe"
+    | _ -> if Environment.runningOnMono then "fsc" else "fsc.exe"
 
   /// If we cannto find F# Interactive, we use just "fsi.exe" on 
   /// .NET or we use "fsharpi" command on Mono (installed by the package)
@@ -397,6 +397,6 @@ module Common =
         // If we can find 'fsi.exe' then that is good no matter where we're running
         Path.Combine(dir, "fsi.exe")
         // Fallback case - depends on the platform
-    | _ -> if Environment.runningOnMono then "fsharpi" else "fsi.exe"
+    | _ -> if Environment.runningOnMono then "fsi" else "fsi.exe"
 
   do Debug.tracef "Resolution" "Paths:\n - fsc = %s\n - fsi = %s" fscPath fsiPath
