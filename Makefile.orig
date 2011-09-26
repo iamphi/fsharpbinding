@@ -13,7 +13,7 @@ GTKDIR = INSERT_GTK_DIR
 GDKDIR = INSERT_GDK_DIR
 GLIBDIR = INSERT_GLIB_DIR
 MONO = INSERT_MONO
-MDRUN = $(MONO) $(MDROOT)/bin/mdrun.exe
+MDTOOL = $(MONO) $(MDROOT)/bin/mdtool.exe
 
 FSC = INSERT_FSHARP_COMPILER
 CSC = INSERT_CSHARP_COMPILER
@@ -108,5 +108,5 @@ package:
 	mkdir -p repository
 	cp bin/FSharpBinding.* bin/repository
 	cp src/Resources/FSharpBinding.addin.xml bin/repository
-	$(MDRUN) setup pack bin/repository/FSharpBinding.addin.xml -d:repository
+	$(MDTOOL) setup pack bin/repository/FSharpBinding.addin.xml -d:repository
 

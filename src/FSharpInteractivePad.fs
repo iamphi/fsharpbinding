@@ -29,12 +29,9 @@ type FSharpInteractivePad() =
   let mutable enterHandler = { new IDisposable with member x.Dispose() = () }
 
   let AddSourceToSelection selection =
-     let line = ref 0
-     let col  = ref 0
-     let stap = IdeApp.Workbench.ActiveDocument.Editor.SelectionRange.Offset
-     let documentOffset = IdeApp.Workbench.ActiveDocument.Editor.OffsetToLocation(stap)
+     let line = IdeApp.Workbench.ActiveDocument.Editor.MainSelection.MinLine
      let file = IdeApp.Workbench.ActiveDocument.FileName
-     String.Format("# {0} \"{1}\"\n{2}" , documentOffset.Line, file.FullPath,selection)  
+     String.Format("# {0} \"{1}\"\n{2}" , line, file.FullPath,selection)  
 
   let rec setupReleaseHandler (ea:Gtk.KeyReleaseEventArgs) =
     enterHandler.Dispose()

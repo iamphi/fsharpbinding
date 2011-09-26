@@ -375,16 +375,16 @@ module Common =
 
   /// If we cannto find the F# compiler, we use just "fsc.exe" on 
   /// .NET or we use "fsharpc" command on Mono (installed by the package)
-  let fscPath = 
-    match FSharpEnvironment.BinFolderOfDefaultFSharpCompiler with
-    | _ when Environment.runningOnMono && ((ScriptOptions.safeExists "/usr/bin/fsharpc") || (ScriptOptions.safeExists "/usr/local/bin/fsharpc")) ->
-        // On Mono, we always prefer 'fsharpc' script, especially if we can find it
-        "fsharpc"
-    | Some(dir) when File.Exists(Path.Combine(dir, "fsc.exe")) ->  
-        // If we can find 'fsc.exe' then that is good no matter where we're running
-        Path.Combine(dir, "fsc.exe")
-        // Fallback case - depends on the platform
-    | _ -> if Environment.runningOnMono then "fsc" else "fsc.exe"
+  let fscPath =  "fsc"
+    //match FSharpEnvironment.BinFolderOfDefaultFSharpCompiler with
+    //| _ when Environment.runningOnMono && ((ScriptOptions.safeExists "/usr/bin/fsharpc") || (ScriptOptions.safeExists "/usr/local/bin/fsharpc")) ->
+     //   // On Mono, we always prefer 'fsharpc' script, especially if we can find it
+     //   "fsharpc"
+    //| Some(dir) when File.Exists(Path.Combine(dir, "fsc.exe")) ->  
+     //   // If we can find 'fsc.exe' then that is good no matter where we're running
+     //   Path.Combine(dir, "fsc.exe")
+     //   // Fallback case - depends on the platform
+    //| _ -> if Environment.runningOnMono then "fsc" else "fsc.exe"
 
   /// If we cannto find F# Interactive, we use just "fsi.exe" on 
   /// .NET or we use "fsharpi" command on Mono (installed by the package)
